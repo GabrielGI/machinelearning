@@ -28,7 +28,7 @@ namespace Microsoft.ML.Data.DataLoadSave
                 var partialMetadata = shape[i].Metadata;
                 for (int j = 0; j < partialMetadata.Count; ++j)
                 {
-                    var metaColumnType = MakeColumnType(partialMetadata[i]);
+                    var metaColumnType = MakeColumnType(partialMetadata[j]);
                     Delegate del;
                     if (metaColumnType.IsVector)
                         del = Utils.MarshalInvoke(GetDefaultVectorGetter<int>, metaColumnType.ItemType.RawType);
